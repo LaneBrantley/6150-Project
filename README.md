@@ -1,1 +1,2 @@
 # 6150-Project
+In order to run this program, download the source code, unzip and open up in any IDE of your choice. When in the folder, navigaet to "createCSV.py" and run the main function at the bottom. This will generate a CSV file in the same directory which contains the dataset to feed to the ML program. After the CSV file is successfully generated, navigate to the "mlProgram.py" file. When in the file, scroll to the bottom and run the main function and wait for the output to be given. This will also save a packet classifier file in the directory for future use. 
