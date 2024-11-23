@@ -9,10 +9,6 @@ import joblib
 
 # Load dataset
 def load_data(file_path):
-    """
-    Load the CSV dataset containing packet information.
-    The dataset must have a 'label' column indicating if a packet is malicious or not.
-    """
     try:
         data = pd.read_csv(file_path)
         print("Data loaded successfully!")
@@ -24,9 +20,6 @@ def load_data(file_path):
 
 # Preprocess dataset
 def preprocess_data(data):
-    """
-    Preprocess the data by encoding non-numeric columns, balancing the dataset, and splitting features and labels.
-    """
     # Separate features and label
     X = data.drop(columns=['label'])
     y = data['label']
@@ -63,9 +56,6 @@ def preprocess_data(data):
 
 # Train Random Forest model with hyperparameter tuning
 def train_model(X_train, y_train):
-    """
-    Train a Random Forest Classifier with optimal hyperparameters.
-    """
     # Define hyperparameter grid
     param_grid = {
         'n_estimators': [100, 200, 300],
@@ -93,9 +83,6 @@ def train_model(X_train, y_train):
 
 # Evaluate model
 def evaluate_model(model, X_test, y_test):
-    """
-    Evaluate the model on the test data and print the results.
-    """
     y_pred = model.predict(X_test)
     print("Model Evaluation:")
     print(f"Accuracy: {accuracy_score(y_test, y_pred)}")
@@ -107,9 +94,6 @@ def evaluate_model(model, X_test, y_test):
 
 # Save model
 def save_model(model, file_name):
-    """
-    Save the trained model to a file.
-    """
     joblib.dump(model, file_name)
     print(f"Model saved to {file_name}.")
 

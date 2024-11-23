@@ -44,5 +44,6 @@ def generate_csv(file_name, num_records=500):
             ])
     print(f"Enhanced CSV file '{file_name}' created with {num_records} entries.")
 
+
 if __name__ == "__main__":
     generate_csv('network_packets.csv', num_records=1000)
